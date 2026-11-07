@@ -2,8 +2,8 @@
   "name": "jaxtypinglint",
   "displayName": "jaxtypinglint",
   "description": "See jaxtyping tensor shapes in Python hovers and signatures, alongside Pylance. No JAX required.",
-  "version": "0.2.0",
-  "publisher": "jaxtypinglint-local",
+  "version": "0.2.1",
+  "publisher": "harveyh",
   "license": "MIT",
   "engines": {
     "vscode": "^1.95.0"

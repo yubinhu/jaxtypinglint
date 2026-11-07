@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- Publish under the registered Marketplace identity `harveyh.jaxtypinglint`.
+- Add Marketplace installation and local-package migration instructions.
+
 ## 0.2.0
 
 - Replace repeated function signatures with shape-only tables.

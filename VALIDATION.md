@@ -1,4 +1,7 @@
-# Validation — 0.2.0
+# Validation — 0.2.1
+
+The Marketplace package uses publisher `harveyh` and version `0.2.1`.
+Both package.json and the VSIX XML identity were checked before upload.
 
 Verified locally on 2026-11-07 with macOS arm64, Node.js 20.19.0 (unit tests and
 packaging), Node.js 20.11.1 (integration launcher), and VS Code 1.145.2.

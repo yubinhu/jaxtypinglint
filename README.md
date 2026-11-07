@@ -40,19 +40,33 @@ completions, type checking, and documentation.
 
 ## Install
 
-1. Download `jaxtypinglint-0.2.0.vsix` from the [GitHub release](https://github.com/yubinhu/jaxtypinglint/releases/latest).
-2. In VS Code, open Extensions and choose **… → Install from VSIX…**.
-3. Select the downloaded file, then open a Python file and hover over an annotated
-   function call, parameter, or variable. If needed, run **Developer: Reload Window**.
-
-Marketplace publication is pending a publisher account. The GitHub VSIX works
-without a Marketplace listing.
-
-Or run the VS Code CLI from the directory containing the downloaded file:
+The Marketplace extension ID is `harveyh.jaxtypinglint`. After Marketplace
+validation, install it from the
+[extension page](https://marketplace.visualstudio.com/items?itemName=harveyh.jaxtypinglint)
+or the VS Code CLI:
 
 ```sh
-code --install-extension ./jaxtypinglint-0.2.0.vsix
+code --install-extension harveyh.jaxtypinglint
 ```
+
+Alternatively, download `jaxtypinglint-0.2.1.vsix` from the
+[GitHub release](https://github.com/yubinhu/jaxtypinglint/releases/latest), then use
+**Extensions → … → Install from VSIX…** or run:
+
+```sh
+code --install-extension ./jaxtypinglint-0.2.1.vsix
+```
+
+If you installed the earlier local build, uninstall it before installing this
+extension so both copies do not add hover sections:
+
+```sh
+code --uninstall-extension jaxtypinglint-local.jaxtypinglint
+code --install-extension harveyh.jaxtypinglint
+```
+
+Open a Python file and hover over an annotated function call, parameter, or
+variable. If needed, run **Developer: Reload Window**.
 
 Keep Pylance enabled. Try `examples/demo.py` without installing any Python
 packages; the extension reads source only. The examples are editor fixtures,
@@ -140,9 +154,9 @@ simulated external definition provider. They do not claim Pylance end-to-end
 coverage. The test host disables other installed extensions.
 
 `npm run package` creates a bundled VSIX; users do not need Node.js or npm to
-install it. The publisher ID `jaxtypinglint-local` is for local packaging only.
-Nothing is published to the Marketplace by these commands. See [PUBLISHING.md](PUBLISHING.md)
-for the remaining Marketplace setup and release steps.
+install it. Packages use the registered publisher ID `harveyh`. These commands
+do not publish to the Marketplace. See [PUBLISHING.md](PUBLISHING.md) for upload
+and release steps.
 
 ## Implementation
 

@@ -1,0 +1,92 @@
+{
+  "name": "jaxtypinglint",
+  "displayName": "jaxtypinglint",
+  "description": "See jaxtyping tensor shapes in Python hovers and signatures, alongside Pylance. No JAX required.",
+  "version": "0.2.0",
+  "publisher": "jaxtypinglint-local",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "keywords": [
+    "python",
+    "jaxtyping",
+    "pytorch",
+    "tensor",
+    "shapes"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "jaxtypinglint.showShape",
+        "title": "jaxtypinglint: Show Shape Annotation"
+      }
+    ],
+    "configuration": {
+      "title": "jaxtypinglint",
+      "properties": {
+        "jaxtypinglint.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show jaxtyping shapes in Python hovers."
+        },
+        "jaxtypinglint.signatureHelp": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show compact call signatures and the active parameter\u2019s shape. Optional because VS Code chooses between signature providers rather than merging them."
+        },
+        "jaxtypinglint.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Warn about multiple variadic axes in a shape annotation. Does not check runtime tensor shapes."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "test:integration": "npm run build && node scripts/test-integration.mjs",
+    "vscode:prepublish": "npm run build",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@lezer/python": "^1.1.18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "@types/vscode": "1.95.0",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.2.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "markdown-it": "^14.3.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yubinhu/jaxtypinglint.git"
+  },
+  "homepage": "https://github.com/yubinhu/jaxtypinglint#readme",
+  "bugs": {
+    "url": "https://github.com/yubinhu/jaxtypinglint/issues"
+  },
+  "author": "Harvey Hu",
+  "pricing": "Free"
+}

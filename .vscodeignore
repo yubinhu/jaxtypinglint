@@ -1,0 +1,17 @@
+.vscode/**
+.vscode-test/**
+src/**
+test/**
+scripts/**
+node_modules/**
+tsconfig.json
+package-lock.json
+.gitignore
+*.vsix
+*.log
+VALIDATION.md
+dist/*.map
+dist/integration.js
+.github/**
+PUBLISHING.md
+*.vsix.sha256
